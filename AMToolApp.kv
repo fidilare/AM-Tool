@@ -1,0 +1,58 @@
+<Display>:
+    do_default_tab: False
+    TabbedPanelItem:
+        id: firstTab
+        text: 'first tab'
+        GridLayout:
+            rows: 2
+            cols: 1
+            maxCols: 9
+            AircraftTitle:
+            AircraftList:
+    TabbedPanelItem:
+        id: tata
+        text: 'tab2'
+        BoxLayout:
+            Label:
+                text: 'Second tab content area'
+            Button:
+                text: 'Button that does nothing'
+    TabbedPanelItem:
+        text: 'tab3'
+        RstDocument:
+            text:
+                '\\n'.join(("Hello world", "-----------",
+                "You are in the third tab."))
+
+<AircraftTitle>
+    id: labels
+    rows: 1
+    cols: 9
+    size_hint_y: None
+    Label:
+        text: 'Name'
+    Label:
+        text: 'Category'
+    Label:
+        text: 'Range'
+    Label:
+        text: 'Speed'
+    Label:
+        text: 'Seat'
+    Label:
+        text: 'Conso.'
+    Label:
+        text: 'Wear'
+    Label:
+        text: 'Payload'
+    Label:
+        text: 'Price'
+
+<AircraftList>
+    viewclass: 'Label'
+    RecycleGridLayout:
+        cols: 9
+        size_hint_y: None
+        default_size_hint: 1, None
+        height: self.minimum_height
+        orientation: 'vertical'
